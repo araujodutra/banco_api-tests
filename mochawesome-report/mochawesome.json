@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-03-24T02:45:52.300Z",
-    "end": "2026-03-24T02:45:52.478Z",
-    "duration": 178,
+    "start": "2026-04-04T09:45:06.972Z",
+    "end": "2026-04-04T09:45:07.018Z",
+    "duration": 46,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "7a5dd9e6-9708-42ac-aa4b-2e34c73286dc",
+      "uuid": "c3caae2c-d77a-4ea6-a1a3-27b09f60a459",
       "title": "",
       "fullFile": "C:\\Projetos\\banco-api-tests\\test\\login.test.js",
       "file": "\\test\\login.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f8b1b727-fe28-4b9b-852a-d413fc1675fb",
+          "uuid": "58928ac9-e4ea-470f-ba62-f4e3b1bfa2c8",
           "title": "login",
           "fullFile": "C:\\Projetos\\banco-api-tests\\test\\login.test.js",
           "file": "\\test\\login.test.js",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "2cabc1cf-d75a-4bcd-8163-20f2a03b1da3",
+              "uuid": "9a270083-9e91-4634-b058-ae040f7e5658",
               "title": "POST /login",
               "fullFile": "C:\\Projetos\\banco-api-tests\\test\\login.test.js",
               "file": "\\test\\login.test.js",
@@ -47,29 +47,29 @@
                   "title": "Deve retornar 200 com um token em string quando usar credenciais válidas",
                   "fullTitle": "login POST /login Deve retornar 200 com um token em string quando usar credenciais válidas",
                   "timedOut": false,
-                  "duration": 171,
+                  "duration": 40,
                   "state": "passed",
-                  "speed": "slow",
+                  "speed": "medium",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "// SuperTeste, fazer requisições a APIs\n      const resposta = await request('http://localhost:3000')\n        .post('/login')\n        .set('Content-Type', 'application/json')\n        .send({\n          username: 'julio.lima',\n          senha: '123456'\n        });\n      console.log(resposta.status)\n      console.log(resposta.body)\n        // (CHAI)fazer asserções Validar as asserções e validar comparações resposta e valor!\n      expect(resposta.status).to.equal(200);\n      expect(resposta.body.token).to.be.a('string');",
                   "err": {},
-                  "uuid": "0f893b6c-d3b7-49ba-8399-0bfe8d0f69b3",
-                  "parentUUID": "2cabc1cf-d75a-4bcd-8163-20f2a03b1da3",
+                  "uuid": "2f153434-5874-41f9-bcf3-8588969e1717",
+                  "parentUUID": "9a270083-9e91-4634-b058-ae040f7e5658",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "0f893b6c-d3b7-49ba-8399-0bfe8d0f69b3"
+                "2f153434-5874-41f9-bcf3-8588969e1717"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 171,
+              "duration": 40,
               "root": false,
               "rootEmpty": false,
               "_timeout": 200000
