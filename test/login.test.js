@@ -1,6 +1,7 @@
 // PRIMEIRO TESTE DE API REST!
 const request = require('supertest');
 const { expect } = require('chai');
+require('dotenv').config()
 
 // MOCHA, Estruturar os testes e para executar o teste também!
 describe('login', () => {
@@ -8,7 +9,7 @@ describe('login', () => {
     it('Deve retornar 200 com um token em string quando usar credenciais válidas', async () => {
 
         // SuperTeste, fazer requisições a APIs
-      const resposta = await request('http://localhost:3000')
+      const resposta = await request(process.env.BASE_URL)
         .post('/login')
         .set('Content-Type', 'application/json')
         .send({
