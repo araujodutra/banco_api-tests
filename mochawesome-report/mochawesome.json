@@ -1,24 +1,24 @@
 {
   "stats": {
     "suites": 4,
-    "tests": 3,
+    "tests": 1,
     "passes": 0,
     "pending": 0,
-    "failures": 3,
-    "start": "2026-04-05T00:30:32.144Z",
-    "end": "2026-04-05T00:30:32.167Z",
-    "duration": 23,
+    "failures": 1,
+    "start": "2026-04-05T00:55:10.957Z",
+    "end": "2026-04-05T00:55:10.967Z",
+    "duration": 10,
     "testsRegistered": 3,
     "passPercent": 0,
     "pendingPercent": 0,
-    "other": 0,
-    "hasOther": false,
-    "skipped": 0,
-    "hasSkipped": false
+    "other": 1,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "84cefbaa-f3a1-4250-ac7a-9e622f24e5a9",
+      "uuid": "37a7bc8e-8960-4c2a-bb33-4b3ec7ad2bf4",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2eefe444-2492-4566-be80-332139deb2e1",
+          "uuid": "e9df301b-87e6-4ae9-aec8-0dd0b3fcc74f",
           "title": "login",
           "fullFile": "C:\\Projetos\\banco-api-tests\\test\\login.test.js",
           "file": "\\test\\login.test.js",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "647caa0d-301b-4418-851a-f255636aca78",
+              "uuid": "968ebae6-359e-4e84-a9f2-62442edd58aa",
               "title": "POST /login",
               "fullFile": "C:\\Projetos\\banco-api-tests\\test\\login.test.js",
               "file": "\\test\\login.test.js",
@@ -47,7 +47,7 @@
                   "title": "Deve retornar 200 com um token em string quando usar credenciais válidas",
                   "fullTitle": "login POST /login Deve retornar 200 com um token em string quando usar credenciais válidas",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 1,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -60,8 +60,8 @@
                     "estack": "TypeError: Invalid URL\n    at new URL (node:internal/url:819:25)\n    at Request.request (node_modules\\superagent\\lib\\node\\index.js:678:15)\n    at Request.end (node_modules\\superagent\\lib\\node\\index.js:909:8)\n    at Test.end (node_modules\\supertest\\lib\\test.js:136:11)\n    at C:\\Projetos\\banco-api-tests\\node_modules\\superagent\\lib\\request-base.js:265:12\n    at new Promise (<anonymous>)\n    at RequestBase.then (node_modules\\superagent\\lib\\request-base.js:249:31)",
                     "diff": null
                   },
-                  "uuid": "221cdad7-0d56-424e-906e-f804b2d25717",
-                  "parentUUID": "647caa0d-301b-4418-851a-f255636aca78",
+                  "uuid": "678fc164-72a9-4ee4-99be-ba08b70e7b26",
+                  "parentUUID": "968ebae6-359e-4e84-a9f2-62442edd58aa",
                   "isHook": false,
                   "skipped": false
                 }
@@ -69,11 +69,11 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "221cdad7-0d56-424e-906e-f804b2d25717"
+                "678fc164-72a9-4ee4-99be-ba08b70e7b26"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 1,
               "root": false,
               "rootEmpty": false,
               "_timeout": 200000
@@ -89,7 +89,7 @@
           "_timeout": 200000
         },
         {
-          "uuid": "1cb92fcf-b91e-4633-b7ae-17feeba1baa0",
+          "uuid": "436d2f06-df2f-4e19-915a-097f3b6cd216",
           "title": "Transferência",
           "fullFile": "C:\\Projetos\\banco-api-tests\\test\\transferencia.test.js",
           "file": "\\test\\transferencia.test.js",
@@ -98,38 +98,14 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "b8fbfd43-b922-4909-9a5c-65f4ec005b98",
+              "uuid": "7662a02d-ecf8-4312-a7d6-e3b4a321ab1f",
               "title": "POST /transferencia",
               "fullFile": "C:\\Projetos\\banco-api-tests\\test\\transferencia.test.js",
               "file": "\\test\\transferencia.test.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
+              "beforeHooks": [
                 {
-                  "title": "Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00",
-                  "fullTitle": "Transferência POST /transferencia Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00",
-                  "timedOut": false,
-                  "duration": 0,
-                  "state": "failed",
-                  "speed": null,
-                  "pass": false,
-                  "fail": true,
-                  "pending": false,
-                  "context": null,
-                  "code": "const token = await obterToken('julio.lima', '123456');\nconst resposta = await request(process.env.BASE_URL)\n    .post('/transferencia')\n    .set('Content-Type', 'application/json')\n    .set('Authorization', `Bearer ${token}`)\n    .send({\n        contaOrigem: 1,\n        contaDestino: 2,\n        valor: 11,\n        token: \"\"\n    });\nexpect(resposta.status).to.equal(201);",
-                  "err": {
-                    "message": "TypeError: Invalid URL",
-                    "estack": "TypeError: Invalid URL\n    at new URL (node:internal/url:819:25)\n    at Request.request (node_modules\\superagent\\lib\\node\\index.js:678:15)\n    at Request.end (node_modules\\superagent\\lib\\node\\index.js:909:8)\n    at Test.end (node_modules\\supertest\\lib\\test.js:136:11)\n    at C:\\Projetos\\banco-api-tests\\node_modules\\superagent\\lib\\request-base.js:265:12\n    at new Promise (<anonymous>)\n    at RequestBase.then (node_modules\\superagent\\lib\\request-base.js:249:31)",
-                    "diff": null
-                  },
-                  "uuid": "7f4cf9cf-c7be-41a6-be7c-aa4e3f72e714",
-                  "parentUUID": "b8fbfd43-b922-4909-9a5c-65f4ec005b98",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "Deve retornar falha com 422 quando o valor for abaixo de 10,00",
-                  "fullTitle": "Transferência POST /transferencia Deve retornar falha com 422 quando o valor for abaixo de 10,00",
+                  "title": "\"before each\" hook for \"Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00\"",
+                  "fullTitle": "Transferência POST /transferencia \"before each\" hook for \"Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00\"",
                   "timedOut": false,
                   "duration": 1,
                   "state": "failed",
@@ -138,27 +114,66 @@
                   "fail": true,
                   "pending": false,
                   "context": null,
-                  "code": "const token = await obterToken('julio.lima', '123456');\n const resposta = await request('http://localhost:3000')\n     .post('/transferencia')\n     .set('Content-Type', 'application/json')\n     .set('Authorization', `Bearer ${token}`)\n     .send({\n         contaOrigem: 1,\n         contaDestino: 2,\n         valor: 7,\n         token: \"\"\n     });\n expect(resposta.status).to.equal(422);",
+                  "code": "token = await obterToken('julio.lima', '123456');",
                   "err": {
                     "message": "TypeError: Invalid URL",
                     "estack": "TypeError: Invalid URL\n    at new URL (node:internal/url:819:25)\n    at Request.request (node_modules\\superagent\\lib\\node\\index.js:678:15)\n    at Request.end (node_modules\\superagent\\lib\\node\\index.js:909:8)\n    at Test.end (node_modules\\supertest\\lib\\test.js:136:11)\n    at C:\\Projetos\\banco-api-tests\\node_modules\\superagent\\lib\\request-base.js:265:12\n    at new Promise (<anonymous>)\n    at RequestBase.then (node_modules\\superagent\\lib\\request-base.js:249:31)",
                     "diff": null
                   },
-                  "uuid": "b33c26b5-ff60-472c-b24a-e26dab025348",
-                  "parentUUID": "b8fbfd43-b922-4909-9a5c-65f4ec005b98",
-                  "isHook": false,
+                  "uuid": "d13fe99e-8674-47e1-866b-8227cb03e355",
+                  "parentUUID": "7662a02d-ecf8-4312-a7d6-e3b4a321ab1f",
+                  "isHook": true,
                   "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00",
+                  "fullTitle": "Transferência POST /transferencia Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const resposta = await request(process.env.BASE_URL)\n    .post('/transferencia')\n    .set('Content-Type', 'application/json')\n    .set('Authorization', `Bearer ${token}`)\n    .send({\n        contaOrigem: 1,\n        contaDestino: 2,\n        valor: 11,\n        token: \"\"\n    });\nexpect(resposta.status).to.equal(201);",
+                  "err": {},
+                  "uuid": "f138cca9-d597-4fa6-ae02-6bbd80eaf8f3",
+                  "parentUUID": "7662a02d-ecf8-4312-a7d6-e3b4a321ab1f",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "Deve retornar falha com 422 quando o valor for abaixo de 10,00",
+                  "fullTitle": "Transferência POST /transferencia Deve retornar falha com 422 quando o valor for abaixo de 10,00",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const resposta = await request('http:/localhost:3000')\n     .post('/transferencia')\n     .set('Content-Type', 'application/json')\n     .set('Authorization', `Bearer ${token}`)\n     .send({\n         contaOrigem: 1,\n         contaDestino: 2,\n         valor: 7,\n         token: \"\"\n     });\n expect(resposta.status).to.equal(422);",
+                  "err": {},
+                  "uuid": "e1a343d0-ba4c-4939-8306-0f8062b5ec1d",
+                  "parentUUID": "7662a02d-ecf8-4312-a7d6-e3b4a321ab1f",
+                  "isHook": false,
+                  "skipped": true
                 }
               ],
               "suites": [],
               "passes": [],
-              "failures": [
-                "7f4cf9cf-c7be-41a6-be7c-aa4e3f72e714",
-                "b33c26b5-ff60-472c-b24a-e26dab025348"
-              ],
+              "failures": [],
               "pending": [],
-              "skipped": [],
-              "duration": 1,
+              "skipped": [
+                "f138cca9-d597-4fa6-ae02-6bbd80eaf8f3",
+                "e1a343d0-ba4c-4939-8306-0f8062b5ec1d"
+              ],
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 200000
