@@ -9,6 +9,7 @@ Biblioteca de requisições HTTP: Supertest
 Biblioteca de asserções: Chai
 Relatórios de testes: Mochawesome
 Gerenciamento de variáveis de ambiente: dotenv
+
 Estrutura de diretórios
 banco-api-tests/
 ├── test/               # Testes organizados por funcionalidades
