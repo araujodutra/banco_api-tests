@@ -2,23 +2,23 @@
   "stats": {
     "suites": 4,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2026-04-05T00:55:10.957Z",
-    "end": "2026-04-05T00:55:10.967Z",
-    "duration": 10,
-    "testsRegistered": 3,
-    "passPercent": 0,
+    "failures": 0,
+    "start": "2026-04-13T01:34:43.909Z",
+    "end": "2026-04-13T01:34:43.956Z",
+    "duration": 47,
+    "testsRegistered": 5,
+    "passPercent": 20,
     "pendingPercent": 0,
     "other": 1,
     "hasOther": true,
-    "skipped": 2,
+    "skipped": 4,
     "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "37a7bc8e-8960-4c2a-bb33-4b3ec7ad2bf4",
+      "uuid": "c48bcf59-7174-4c6e-aba6-e289a80f17c5",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e9df301b-87e6-4ae9-aec8-0dd0b3fcc74f",
+          "uuid": "575d26a3-5458-4be2-a373-49b6f90afbc2",
           "title": "login",
           "fullFile": "C:\\Projetos\\banco-api-tests\\test\\login.test.js",
           "file": "\\test\\login.test.js",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "968ebae6-359e-4e84-a9f2-62442edd58aa",
+              "uuid": "3feba01a-aebd-46bc-8d9c-f296892994de",
               "title": "POST /login",
               "fullFile": "C:\\Projetos\\banco-api-tests\\test\\login.test.js",
               "file": "\\test\\login.test.js",
@@ -47,33 +47,29 @@
                   "title": "Deve retornar 200 com um token em string quando usar credenciais válidas",
                   "fullTitle": "login POST /login Deve retornar 200 com um token em string quando usar credenciais válidas",
                   "timedOut": false,
-                  "duration": 1,
-                  "state": "failed",
-                  "speed": null,
-                  "pass": false,
-                  "fail": true,
+                  "duration": 35,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "// SuperTeste, fazer requisições a APIs\n      const resposta = await request(process.env.BASE_URL)\n        .post('/login')\n        .set('Content-Type', 'application/json')\n        .send({\n          username: 'julio.lima',\n          senha: '123456'\n        });\n      console.log(resposta.status)\n      console.log(resposta.body)\n        // (CHAI)fazer asserções Validar as asserções e validar comparações resposta e valor!\n      expect(resposta.status).to.equal(200);\n      expect(resposta.body.token).to.be.a('string');",
-                  "err": {
-                    "message": "TypeError: Invalid URL",
-                    "estack": "TypeError: Invalid URL\n    at new URL (node:internal/url:819:25)\n    at Request.request (node_modules\\superagent\\lib\\node\\index.js:678:15)\n    at Request.end (node_modules\\superagent\\lib\\node\\index.js:909:8)\n    at Test.end (node_modules\\supertest\\lib\\test.js:136:11)\n    at C:\\Projetos\\banco-api-tests\\node_modules\\superagent\\lib\\request-base.js:265:12\n    at new Promise (<anonymous>)\n    at RequestBase.then (node_modules\\superagent\\lib\\request-base.js:249:31)",
-                    "diff": null
-                  },
-                  "uuid": "678fc164-72a9-4ee4-99be-ba08b70e7b26",
-                  "parentUUID": "968ebae6-359e-4e84-a9f2-62442edd58aa",
+                  "code": "const bodyLogin = { ...postLogin } \n  // SuperTeste, fazer requisições a APIs\nconsole.log('BASE_URL:', process.env.BASE_URL);\n\nconst resposta = await request(process.env.BASE_URL)\n  .post('/login')\n  .set('Content-Type', 'application/json')\n  .send(bodyLogin);\nconsole.log(resposta.status);\nconsole.log(resposta.body);\n  // (CHAI)fazer asserções Validar as asserções e validar comparações resposta e valor!\nexpect(resposta.status).to.equal(200);\nexpect(resposta.body.token).to.be.a('string');",
+                  "err": {},
+                  "uuid": "02cc0567-1289-404a-9c73-1224fbf0cf57",
+                  "parentUUID": "3feba01a-aebd-46bc-8d9c-f296892994de",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [],
-              "failures": [
-                "678fc164-72a9-4ee4-99be-ba08b70e7b26"
+              "passes": [
+                "02cc0567-1289-404a-9c73-1224fbf0cf57"
               ],
+              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1,
+              "duration": 35,
               "root": false,
               "rootEmpty": false,
               "_timeout": 200000
@@ -89,43 +85,43 @@
           "_timeout": 200000
         },
         {
-          "uuid": "436d2f06-df2f-4e19-915a-097f3b6cd216",
+          "uuid": "d1aef90b-e3eb-4803-a353-5825b91fbc8a",
           "title": "Transferência",
           "fullFile": "C:\\Projetos\\banco-api-tests\\test\\transferencia.test.js",
           "file": "\\test\\transferencia.test.js",
-          "beforeHooks": [],
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook for \"Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00\"",
+              "fullTitle": "Transferência \"before each\" hook for \"Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "token = await obterToken('julio.lima', '123456');",
+              "err": {
+                "message": "ReferenceError: bodyLogin is not defined",
+                "estack": "ReferenceError: bodyLogin is not defined\n    at obterToken (helpers\\autenticacao.js:11:15)\n    at Context.<anonymous> (test\\transferencia.test.js:12:28)\n    at process.processImmediate (node:internal/timers:504:21)",
+                "diff": null
+              },
+              "uuid": "4e51b9de-fe56-48a7-b627-57bcfa04425d",
+              "parentUUID": "d1aef90b-e3eb-4803-a353-5825b91fbc8a",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "7662a02d-ecf8-4312-a7d6-e3b4a321ab1f",
+              "uuid": "58c2f93f-b9d4-4434-bdf4-f88703b3bd0d",
               "title": "POST /transferencia",
               "fullFile": "C:\\Projetos\\banco-api-tests\\test\\transferencia.test.js",
               "file": "\\test\\transferencia.test.js",
-              "beforeHooks": [
-                {
-                  "title": "\"before each\" hook for \"Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00\"",
-                  "fullTitle": "Transferência POST /transferencia \"before each\" hook for \"Deve retornar sucesso com 201 quando o valor for igual ou acima 10,00\"",
-                  "timedOut": false,
-                  "duration": 1,
-                  "state": "failed",
-                  "speed": null,
-                  "pass": false,
-                  "fail": true,
-                  "pending": false,
-                  "context": null,
-                  "code": "token = await obterToken('julio.lima', '123456');",
-                  "err": {
-                    "message": "TypeError: Invalid URL",
-                    "estack": "TypeError: Invalid URL\n    at new URL (node:internal/url:819:25)\n    at Request.request (node_modules\\superagent\\lib\\node\\index.js:678:15)\n    at Request.end (node_modules\\superagent\\lib\\node\\index.js:909:8)\n    at Test.end (node_modules\\supertest\\lib\\test.js:136:11)\n    at C:\\Projetos\\banco-api-tests\\node_modules\\superagent\\lib\\request-base.js:265:12\n    at new Promise (<anonymous>)\n    at RequestBase.then (node_modules\\superagent\\lib\\request-base.js:249:31)",
-                    "diff": null
-                  },
-                  "uuid": "d13fe99e-8674-47e1-866b-8227cb03e355",
-                  "parentUUID": "7662a02d-ecf8-4312-a7d6-e3b4a321ab1f",
-                  "isHook": true,
-                  "skipped": false
-                }
-              ],
+              "beforeHooks": [],
               "afterHooks": [],
               "tests": [
                 {
@@ -139,10 +135,10 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "const resposta = await request(process.env.BASE_URL)\n    .post('/transferencia')\n    .set('Content-Type', 'application/json')\n    .set('Authorization', `Bearer ${token}`)\n    .send({\n        contaOrigem: 1,\n        contaDestino: 2,\n        valor: 11,\n        token: \"\"\n    });\nexpect(resposta.status).to.equal(201);",
+                  "code": "const bodyTransferencias = { ...postTransferencias}\nconst resposta = await request(process.env.BASE_URL)\n    .post('/transferencia')\n    .set('Content-Type', 'application/json')\n    .set('Authorization', `Bearer ${token}`)\n    .send(bodyTransferencias)\nexpect(resposta.status).to.equal(201);",
                   "err": {},
-                  "uuid": "f138cca9-d597-4fa6-ae02-6bbd80eaf8f3",
-                  "parentUUID": "7662a02d-ecf8-4312-a7d6-e3b4a321ab1f",
+                  "uuid": "e91323e4-d605-43e6-890e-5724890b5a72",
+                  "parentUUID": "58c2f93f-b9d4-4434-bdf4-f88703b3bd0d",
                   "isHook": false,
                   "skipped": true
                 },
@@ -157,10 +153,10 @@
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "const resposta = await request('http:/localhost:3000')\n     .post('/transferencia')\n     .set('Content-Type', 'application/json')\n     .set('Authorization', `Bearer ${token}`)\n     .send({\n         contaOrigem: 1,\n         contaDestino: 2,\n         valor: 7,\n         token: \"\"\n     });\n expect(resposta.status).to.equal(422);",
+                  "code": "const bodyTransferencias = { ...postTransferencias}\nbodyTransferencias.valor = 7\n const resposta = await request('http:/localhost:3000')\n     .post('/transferencia')\n     .set('Content-Type', 'application/json')\n     .set('Authorization', `Bearer ${token}`)\n     .send(bodyTransferencias);\n expect(resposta.status).to.equal(422);",
                   "err": {},
-                  "uuid": "e1a343d0-ba4c-4939-8306-0f8062b5ec1d",
-                  "parentUUID": "7662a02d-ecf8-4312-a7d6-e3b4a321ab1f",
+                  "uuid": "817f3ac6-44f4-40c5-8647-62a0b3b96300",
+                  "parentUUID": "58c2f93f-b9d4-4434-bdf4-f88703b3bd0d",
                   "isHook": false,
                   "skipped": true
                 }
@@ -170,8 +166,86 @@
               "failures": [],
               "pending": [],
               "skipped": [
-                "f138cca9-d597-4fa6-ae02-6bbd80eaf8f3",
-                "e1a343d0-ba4c-4939-8306-0f8062b5ec1d"
+                "e91323e4-d605-43e6-890e-5724890b5a72",
+                "817f3ac6-44f4-40c5-8647-62a0b3b96300"
+              ],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 200000
+            },
+            {
+              "uuid": "411f18aa-e88e-4e4c-9a22-bb16f7415ac2",
+              "title": "GET /transferencia/{id}",
+              "fullFile": "C:\\Projetos\\banco-api-tests\\test\\transferencia.test.js",
+              "file": "\\test\\transferencia.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve retornar sucesso com 200 e dados iguaisao ao registro de transferencia contido no banco  de dados quando o ID for válido ",
+                  "fullTitle": "Transferência GET /transferencia/{id} Deve retornar sucesso com 200 e dados iguaisao ao registro de transferencia contido no banco  de dados quando o ID for válido ",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const resposta = await request(process.env.BASE_URL)\n    .get('/transferencias/107')\n    .set('Authorization', `Bearer ${token}`)\n\nconsole.log(esposta.status)  \nconsole.log(esposta.budy)\nexpect(resposta.budy).to.equal(200)\nexpect(resposta.budy).to.equal(107)\nexpect(resposta.budy.id).to.be.a('number')\nexpect(resposta.budy.conta_origem_id).to.equal(1)\nexpect(resposta.budy.conta_destino_id).to.equal(2)\nexpect(resposta.budy.valor).to.equal(11.00)",
+                  "err": {},
+                  "uuid": "f7285290-0013-4273-9425-57dfbfa11223",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [
+                "f7285290-0013-4273-9425-57dfbfa11223"
+              ],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 200000
+            },
+            {
+              "uuid": "137bed3d-157a-4301-8f46-080cabbd1764",
+              "title": "GET /transferencia/{id}",
+              "fullFile": "C:\\Projetos\\banco-api-tests\\test\\transferencia.test.js",
+              "file": "\\test\\transferencia.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve retornar 10 elementos na paginacao quando informar 10 registros",
+                  "fullTitle": "Transferência GET /transferencia/{id} Deve retornar 10 elementos na paginacao quando informar 10 registros",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const resposta = await request(process.env.BASE_URL)\n    .get('/transferencia?page=1&limit=10')\n    .set('Authorization', `Bearer ${token}`)\n    expect(resposta.status).to.equal(200)\n    console.log(esposta.budy.limit).to.equal(10)\n    console.log(esposta.budy.transferencias).to.have.lengtOf(10)\n    console.log(resposta.body)",
+                  "err": {},
+                  "uuid": "51a5b3d6-b0d0-4a15-b0c6-a4174f1872b8",
+                  "parentUUID": null,
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [],
+              "pending": [],
+              "skipped": [
+                "51a5b3d6-b0d0-4a15-b0c6-a4174f1872b8"
               ],
               "duration": 0,
               "root": false,
